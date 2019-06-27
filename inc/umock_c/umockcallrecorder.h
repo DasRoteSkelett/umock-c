@@ -24,6 +24,8 @@ extern "C" {
     extern int umockcallrecorder_get_expected_call_count(UMOCKCALLRECORDER_HANDLE umock_call_recorder, size_t* expected_call_count);
     extern int umockcallrecorder_fail_call(UMOCKCALLRECORDER_HANDLE umock_call_recorder, size_t index);
     extern int umockcallrecorder_can_call_fail(UMOCKCALLRECORDER_HANDLE umock_call_recorder, size_t index, int* can_call_fail);
+    extern int umockcallrecorder_set_immediate_error_on_unexpected_call();
+    extern int umockcallrecorder_reset_immediate_error_on_unexpected_call(UMOCKCALLRECORDER_HANDLE umock_call_recorder);
 
 #ifdef __cplusplus
 }
