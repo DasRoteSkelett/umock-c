@@ -155,7 +155,7 @@ if(NOT DEFINED CMAKE_INSTALL_LIBDIR)
 endif()
 
 # Install UMock C
-set(package_location "cmake")
+set(package_location "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 
 install(TARGETS umock_c EXPORT umock_cTargets
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
