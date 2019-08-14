@@ -72,8 +72,6 @@ set(run_e2e_tests ${original_run_e2e_tests})
 set(run_int_tests ${original_run_int_tests})
 set(run_unittests ${original_run_unittests})
 
-include_directories(${MACRO_UTILS_INC_FOLDER})
-
 set(umock_c_c_files
     ./src/umock_c.c
     ./src/umock_c_negative_tests.c
@@ -123,7 +121,7 @@ FILE(GLOB umock_c_md_files "devdoc/*.md")
 SOURCE_GROUP(devdoc FILES ${umock_c_md_files})
 
 add_library(umock_c ${umock_c_c_files} ${umock_c_h_files} ${umock_c_md_files})
-
+target_link_libraries(umock_c azure_macro_utils_c)
 set_target_properties(umock_c
                PROPERTIES
                FOLDER "test_tools")
